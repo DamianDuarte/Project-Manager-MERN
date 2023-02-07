@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #f3e8ff inset;
+}
+
+.bshadw{
+    box-shadow: 1px 0px 8px 6px rgba(124,58,237,0.5)
+}
+
+body{
+    background-image: url('https://rare-gallery.com/uploads/posts/1097165-Halloween-Pok-mon-Gastly-Gengar-Drifloon-Dusknoir-Litwick-Pumkaboo-Phantump-Gourgeist-Trevenant-Chandelure-Banette-Misdreavus-Rotom-games-screenshot-pc-game.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
