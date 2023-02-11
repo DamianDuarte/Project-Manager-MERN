@@ -12,13 +12,14 @@ export const Projects = () => {
 
   return (
     <>
+    <div className='bg-purple-100 rounded-md bg-opacity-40 p-3 bshadw'>
     <h1
-     className='text-4xl font-black'
+     className='text-4xl font-bold text-purple-900'
     >
       Proyectos
     </h1>
     <div
-     className='bg-white p-5 shadow mt-10 rounded-md'
+     className='bg-purple-200 p-5   bg-opacity-80 mt-10 rounded-md'
     >
       {
         loading
@@ -33,6 +34,8 @@ export const Projects = () => {
       
       }
     </div>
+    </div>
     </>
+    
   )
 }

@@ -4,10 +4,15 @@ import { FormProject } from "../components/FormProject";
 export const ProjectAdd = () => {
     return(
         <>
-        <h1>Crear proyecto</h1>
-        <div>
-            <FormProject />
-        </div>
-        </>
+        <h1
+     className='text-4xl font-black text-white'
+    >
+      Crear proyecto
+    </h1>
+    <div className='mt-10 flex justify-center'>
+      <FormProject/>
+    </div>
+    </>
+    
     )
 }

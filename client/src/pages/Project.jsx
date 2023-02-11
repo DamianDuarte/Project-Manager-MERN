@@ -10,7 +10,7 @@ export const Project = () => {
   const {id} = useParams();
   const { loading, alert, getProject, project } = useProjects();
 
-  const { name, description, dateExpire, client } = project;
+  const { name, description, dateExpire, client, _id } = project;
 
   useEffect(() => {
     getProject(id);
@@ -24,11 +24,12 @@ export const Project = () => {
         <p>Cargando...</p>
       ) : (
         <>
-          <div className="flex justify-between">
+        <div className='bg-purple-100 rounded-md bg-opacity-40 p-5 bshadw'>
+        <div className="flex justify-between">
             <h1 className="text-4xl uppercase font-bold">{name}</h1>
             <Link
-              to={`/projects/edit-project/1`}
-              className="flex justify-center items-center gap-2 text-gray-500 hover:text-black uppercase font-bold"
+              to={`/projects/edit-project/${_id}`}
+              className="flex justify-center items-center gap-2 text-purple-800 hover:text-purple-900 uppercase font-bold"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -47,13 +48,16 @@ export const Project = () => {
               <p>Editar</p>
             </Link>
           </div>
-          <h2 className="text-2xl uppercase font-bold text-gray-600">{client}</h2>
-          <hr className="border-b border-gray-600"/>
+          <div className="flex justify-between items-center">
+          <h2 className="text-2xl uppercase font-bold text-purple-900">{client}</h2>
+          <p>Fecha de entrega: {dateExpire && dateExpire.split('T')[0]}</p>
+          </div>
+          <hr className="border-b border-purple-900"/>
           <p>{description}</p>
           <div className="flex justify-between">
             <p className="font-bold text-3xl mt-10 mb-5">Tareas del proyecto</p>
             <div
-              className="flex justify-center items-center gap-1 text-gray-500 hover:text-black cursor-pointer"
+              className="flex justify-center items-center gap-1 text-purple-800 hover:text-purple-900 cursor-pointer"
               /*  onClick={handleModalForm} */
             >
               <svg
@@ -74,13 +78,13 @@ export const Project = () => {
             </div>
           </div>
           {[1, 2].map((task) => (
-            <Task />
+            <Task key={task}/>
           ))}
           <div className="flex items-center justify-between">
             <p className="font-bold text-3xl mt-10 mb-5">Colaboradores</p>
 
             <button
-              className="flex justify-center items-center gap-1 text-gray-500 hover:text-black cursor-pointer"
+              className="flex justify-center items-center gap-1 text-purple-800 hover:text-purple-900 cursor-pointer"
               /* onClick={handleModalAddCollaborator} */
             >
               <svg
@@ -102,8 +106,10 @@ export const Project = () => {
             </button>
           </div>
           {[1, 2].map((collaborator) => (
-            <Collaborator />
+            <Collaborator key={collaborator}/>
           ))}
+        </div>
+          
         </>
       )}
     </>

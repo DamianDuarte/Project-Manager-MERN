@@ -71,7 +71,7 @@ return (
 
       <form 
       onSubmit={handleSubmit}
-      className='my-10 p-8 bg-white rounded-lg border bshadw' 
+      className='my-10 p-8 bg-white bg-opacity-10 rounded-lg border bshadw' 
       noValidate >
 
           <div className="my-5">

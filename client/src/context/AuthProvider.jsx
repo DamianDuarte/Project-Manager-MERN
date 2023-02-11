@@ -26,7 +26,7 @@ useEffect(() => {
         }
 
         try {
-            const {data} = await clientAxios.get('/users/profile',config);
+            const {data} = await clientAxios.get('/users',config);
             setAuth(data.user);
             
         } catch (error) {
